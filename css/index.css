@@ -4,7 +4,7 @@
 }
 
 body{
-  width: 1920px;
+  max-width: 1920px;
   margin: 0 auto;
 }
 
@@ -22,25 +22,29 @@ body{
   bottom: 0px;
   left: 0px;
   opacity: 0.6;
+  z-index: 999;
 }
 
 .mask-code{
   width: 190px;
   height: 200px;
   position: fixed;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 380px;
+  left: 430px;
   z-index: 999;
-  margin: auto auto;
-  text-align: center;
-  background: #ffffff;
-  color: #a1c5fb;
+  margin: -190px 0px 0px 215px;
 }
 .mask-code img{
-  width: 190px;
-  height: 190px;
+  width: 430px;
+  height: 380px;
+}
+.mask-clone{
+  width: 29px;
+  height: 20px;
+  position: absolute;
+  top: 12px;
+  left: 390px;
+  cursor: pointer;
 }
 
 /*时间轴样式覆盖*/
@@ -53,7 +57,7 @@ body{
 .handle{
   max-width: 1920px;
   height: 1345px;
-	background: url('./images/banner.png') center center;
+	background: url('../images/banner.png') center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
@@ -260,8 +264,7 @@ body{
   margin-bottom: 200px;
 }
 
-.line-body{
-  width: 1920px;
+.line-body{ 
   height: 130px;
   border-bottom: 1px solid #dadada;
 }

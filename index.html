@@ -3,8 +3,8 @@
 <head>
   <title>UTD官网</title>
   <meta charset='utf-8'/>
-  <link rel="stylesheet" href="./index.css" type="text/css"/>
-  <link rel="stylesheet" href="https://www.swiper.com.cn/dist/css/swiper.min.css" type="text/css">
+  <link rel="stylesheet" href="./css/index.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/swiper.min.css" type="text/css">
 </head>
 <body>
 <!--头部-->
@@ -248,25 +248,15 @@
 <!--弹窗-->
 <div class="mask"></div>
 <div class="mask-code">
-  <p>扫码登陆</p>
-  <img src="https://mp.weixin.qq.com/wxopen/qrcode?action=show&type=2&fakeid=3508185447&token=1017713716" alt="">
+  <img src="./images/code.png" alt="">
+  <div class="mask-clone"></div>
 </div>
 
-<script src="https://www.swiper.com.cn/dist/js/swiper.min.js"></script>
-<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script>
-  // 屏幕小于1920，页面整体缩放
-  var windowWidth = $(window).width();
-  var windowHeight = $(window).height();
-  if(windowWidth < 1920){
-    var s= windowWidth/1920;
-    var h= windowHeight/1080;
-    document.body.style.height= h+"px";
-    document.body.style.transform="scale("+s+")";
-    document.body.style.transformOrigin="0 0"
-    // document.getElementsByTagName('body')[0].style.zoom=0.7;
-  }
+<script src="./js/jquery.min.js"></script>
+<script src="./js/swiper.min.js"></script>
 
+<script>
+  // 时间轴滑动
   var swiper = new Swiper('.swiper-container', {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -276,15 +266,11 @@
       clickable: true,
     },
   });
-
+  // 默认隐藏弹框
   $(".mask").hide();
   $(".mask-code").hide();
-
+  // 点击事件逻辑
   $("#login").click(function () {
-    $(".mask").fadeIn();
-    $(".mask-code").fadeIn();
-  })
-  $(".body-con img").click(function () {
     $(".mask").fadeIn();
     $(".mask-code").fadeIn();
   })
@@ -292,6 +278,11 @@
     $(".mask").fadeOut();
     $(".mask-code").fadeOut();
   })
+  $(".mask-clone").click(function () {
+    $(".mask").fadeOut();
+    $(".mask-code").fadeOut();
+  })
 </script>
+
 </body>
 </html>
